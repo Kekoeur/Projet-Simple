@@ -28,4 +28,4 @@ Pour modifier les couleurs du site internet :
   --font-color : hsl(0, 0%, 100%); // Correspond a la couleurs du texte
 
 Si vous modifiez une couleur dans ces lignes, alors ca modifiera cette couleur sur tout le site, 
-Exemple : Sur la version final j'ai changer le highlight-transparent par --highlight-transparent : hsla(107, 15%, 48%, 0.418); donc sur toute les pages la couleurs a été modifier
+Exemple : Sur la version final j'ai changer le highlight par --highlight : #FF9000; donc sur toute les pages la couleurs a été modifier
