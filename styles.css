@@ -2,8 +2,8 @@
   --body-background : hsl(233, 47%, 7%);
   --main-image-transparent: rgba(0, 0, 0, 0.4);
   --elt-background : #1b1b1b;
-  --highlight : hsl(138, 100%, 29%);
-  --highlight-transparent : hsla(107, 15%, 48%, 0.418);
+  --highlight : #FF9000;
+  --highlight-transparent : #ff910070;
   --font-color : hsl(0, 0%, 100%);
   
 
@@ -111,7 +111,7 @@ nav .menu {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  padding: 0 20px;
+  padding: 0 15%;
   text-align: center;
 }
 .center .title {
@@ -120,9 +120,13 @@ nav .menu {
   font-weight: 600;
 }
 .center .sub_title {
-  color: var(--font-color);
-  font-size: 52px;
+  font-size: 45px;
   font-weight: 600;
+}
+
+.center p {
+  font-size: 20px;
+  font-weight: 400;
 }
 .center .btns {
   margin-top: 20px;
@@ -150,7 +154,8 @@ nav .menu {
   color: var(--body-background);
 }
 .center .btns button:last-child {
-  background: var(--font-color);
+  background: var(--highlight);
+  border-color: var(--highlight);
   color: var(--body-background);
 }
 
