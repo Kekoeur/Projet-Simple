@@ -1,9 +1,11 @@
 :root {
   --body-background : hsl(233, 47%, 7%);
-  --elt-background : hsl(244, 38%, 16%);
-  --highlight : hsl(277, 64%, 61%);
-  --highlight-transparent : hsla(277, 64%, 61%, 0.6);
+  --main-image-transparent: rgba(0, 0, 0, 0.4);
+  --elt-background : #1b1b1b;
+  --highlight : hsl(138, 100%, 29%);
+  --highlight-transparent : hsla(107, 15%, 48%, 0.418);
   --font-color : hsl(0, 0%, 100%);
+  
 
   font-size: 15px;
   font-family: 'Inter', sans-serif;
@@ -17,6 +19,22 @@
   font-family: "Poppins", sans-serif;
 }
 
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -26,12 +44,13 @@ body {
 }
 
 ::selection {
-  color: red;
-  background: #fff;
+  color: var(--highlight);
+  background: var(--font-color);
+  font-weight: bold;
 }
 nav {
   position: fixed;
-  background: #1b1b1b;
+  background: var(--elt-background);
   width: 100%;
   padding: 10px 0;
   z-index: 12;
@@ -46,7 +65,7 @@ nav .menu {
 }
 .menu .logo a {
   text-decoration: none;
-  color: #fff;
+  color: var(--font-color);
   font-size: 35px;
   font-weight: 600;
 }
@@ -57,12 +76,10 @@ nav .menu {
   list-style: none;
   margin-left: 7px;
 }
-.menu ul li:first-child {
-  margin-left: 0px;
-}
+
 .menu ul li a, .menu ul li button {
   text-decoration: none;
-  color: #fff;
+  color: var(--font-color);
   font-size: 18px;
   font-weight: 500;
   padding: 8px 15px;
@@ -70,8 +87,8 @@ nav .menu {
   transition: all 0.3s ease;
 }
 .menu ul li a:hover {
-  background: #fff;
-  color: black;
+  background: var(--font-color);
+  color: var(--body-background);
 }
 .img {
   background: url("images/background.jpg") no-repeat;
@@ -86,7 +103,7 @@ nav .menu {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--main-image-transparent);
 }
 .center {
   position: absolute;
@@ -98,12 +115,12 @@ nav .menu {
   text-align: center;
 }
 .center .title {
-  color: #fff;
+  color: var(--font-color);
   font-size: 55px;
   font-weight: 600;
 }
 .center .sub_title {
-  color: #fff;
+  color: var(--font-color);
   font-size: 52px;
   font-weight: 600;
 }
@@ -125,16 +142,16 @@ nav .menu {
   transition: all 0.3s ease;
 }
 .center .btns button:first-child {
-  color: #fff;
+  color: var(--font-color);
   background: none;
 }
 .btns button:first-child:hover {
   background: var(--font-color);
-  color: black;
+  color: var(--body-background);
 }
 .center .btns button:last-child {
   background: var(--font-color);
-  color: black;
+  color: var(--body-background);
 }
 
 /* https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp */
@@ -168,13 +185,13 @@ nav .menu {
   display: none !important;
   position: absolute;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px var(--main-image-transparent);
   z-index: 1;
 }
 
 .dropdown-content li {
   float: none;
-  color: black;
+  color: var(--body-background);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -183,7 +200,7 @@ nav .menu {
 
 .dropdown:hover .dropdown-content {
   display: block !important;
-  background-color: #1b1b1b;
+  background-color: var(--elt-background);
 }
 
 /* Page des villes */
@@ -202,7 +219,7 @@ nav .menu {
   background-color: var(--elt-background);
   border-radius: 10px;
   max-width: 600px;
-  height: 85vh;
+  height: 90vh;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
@@ -210,6 +227,7 @@ nav .menu {
 
 .page-img {
   width: 100%;
+  max-height: 70vh;
   display: flex;
   position: relative;
 }
@@ -247,6 +265,11 @@ h1, .stat {
 }
 
 .highlight {
+  color: var(--highlight);
+}
+
+.name {
+  font-family: 'Lexend Deca', serif;
   color: var(--highlight);
 }
 
@@ -308,5 +331,30 @@ h1, .stat {
   }
   .stat {
     font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page article {
+    height: 75vh;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menu .logo {
+    width: 100%;
+  }
+  .menu .logo a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  nav .menu {
+    flex-direction: column;
+    align-items: start;
+  }
+  .menu ul {
+    flex-direction: column;
   }
 }

@@ -1,0 +1,31 @@
+Dans chaque pages :
+
+J'ai mis des meta description, je sais pas si vous avez vu ca en cours, en tous cas :
+ - Description faut faire une description de la page, du site web
+ - keywords, c'est pour le référencement, c'est les mots important avec lesquels vous voulez que les personnes puissent facilement vous trouver
+ - Author c'est le / les développeur du site web
+
+Voir https://www.w3schools.com/tags/tag_meta.asp
+
+En tous cas vous devez modifier les author de chaque pages, vous pouvez modifier les description et les keywords, et si ca vous gene vous pouvez supprimer ces 3 lignes
+
+Dans chaque pages vous pouvez modifier les texte entre les balises 
+Dans les pages des lieux, courchevel.html, megeve.html, st-barthelemy.html, st-tropez.html
+J'ai mit des "stats" vous pouvez les supprimer ou changez les textes, j'ai pris le templates de la page sur une page que j'avais déja faite donc j'ai laissé les precédents textes
+De plus sur ces pages vous allez retrouvez des balise <picture>, avec dedans des balises <source> et  <img>, je sais pas si vous avez vu les balises <source> en cours, donc si vous les avez pas vu faut peut être mieux les supprimer (elles servent juste a change de photos lorsque la taille de l'écran est plus grande)
+
+Vous pouvez changer toutes les photos présentes, pour ça mettez votre nouvelles photos dans le dossier images et renommez la comme l'ancienne photos, exemple si vous voulez changez background.jpg, alors supprimer la du dossier, images, téléchargez votre nouvelles images au même format que background jpg, donc en jpg, renommez la background et déplacer votre nouvelle image nommer background.jpg dans le dossier images
+Si jamais vous voulez changer de photos mais que le format ne correspond pas, exemple vous voulez changer background.jpg avec une image png, alors vous devrez chercher dans les fichier html ou css ou est appelez background.jpg pour modifier le format souhaiter, ici dans le fichier styles.css, background: url("images/background.jpg") no-repeat; deviens alors background: url("images/background.png") no-repeat;
+
+Pour modifier les couleurs du site internet :
+- Dans styles.css, dans les premmières ligne vous allez trouvez :
+:root {
+  --body-background : hsl(233, 47%, 7%); // Correspond au fond de page
+  --main-image-transparent: rgba(0, 0, 0, 0.4); // Correspond au filtre sur l'image d'appareil photo pour l'assombrir // 0.4 correspond a l'opacité, plus c'est proche de 1 moins c'est transparent
+  --elt-background : #1b1b1b; // Correspond a la couleurs du fond du menu et des encadrés des pages
+  --highlight : hsl(277, 64%, 61%); // Correspond a la couleurs qui ressort sur chaque pages des villes, au niveau du noms de la villes
+  --highlight-transparent : hsla(277, 64%, 61%, 0.6); // Correspond au filtre de couleurs sur les photos dans chaque pages des villes // 0.6 correspond a l'opacité, plus c'est proche de 1 moins c'est transparent
+  --font-color : hsl(0, 0%, 100%); // Correspond a la couleurs du texte
+
+Si vous modifiez une couleur dans ces lignes, alors ca modifiera cette couleur sur tout le site, 
+Exemple : Sur la version final j'ai changer le highlight-transparent par --highlight-transparent : hsla(107, 15%, 48%, 0.418); donc sur toute les pages la couleurs a été modifier
