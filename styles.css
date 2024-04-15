@@ -340,6 +340,18 @@ h1, .stat {
 }
 
 @media only screen and (max-width: 768px) {
+  .center {
+    margin-top: 100px;
+  }
+  .center .title {
+    font-size: 45px;
+  }
+  .center .sub_title {
+    font-size: 35px;
+  }
+  .center p {
+    font-size: 16px;
+  }
   .page article {
     height: 75vh;
   }
